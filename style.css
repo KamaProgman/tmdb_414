@@ -31,7 +31,6 @@ body {
     display: flex;
     gap: 20px;
     margin-top: 10px;
-    font-size: 1.2em;
 }
 
 .nav a {

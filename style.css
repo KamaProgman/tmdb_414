@@ -1,31 +1,148 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-
-body {
+*{
+  padding: 0;
   margin: 0;
-  min-width: 320px;
-  min-height: 100vh;
+  box-sizing: border-box;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+body{
+  background-color: #1E2538;
+
 }
 
-#app {
-  max-width: 1280px;
+a{
+  text-decoration: none;
+}
+
+.container{
   margin: 0 auto;
+  max-width: 1440px;
+  height: 100%;
+  padding: 10px 90px;
+  background-color: #1E2538;
 }
+
+.trailer__title{
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  h2{
+font-size: 45px;
+font-weight: 900;
+line-height: 82.81px;
+  }
+
+  .right__title{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    a{
+      color: white;
+font-size: 22px;
+font-weight: 700;
+line-height: 27.26px;
+
+    }
+
+    .view__trailer__arrow{
+      width: 30px;
+      filter: invert(100%);
+    }
+  }
+}
+
+.movie__box{
+  margin-top: 30px;
+  width: 100%;
+  height: 700px;
+
+  .movie{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+
+}
+
+.movie__cont{
+  padding-top: 35px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .left__cont,
+  .right__cont
+  {
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+  }
+
+  .like-box,
+  .dislike-box
+  {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+  }
+}
+
+.movie__name{
+  color: white;
+  font-size: 45px;
+  font-weight: 900;
+  line-height: 57.33px;  
+}
+
+.social_media_icon{
+  width: 25px;
+  filter: invert(60%);
+}
+
+.swiper {
+  width: 100%;
+  height: 330px;
+}
+
+.swiper-slide{
+  color: white;
+  margin-top: 35px;
+  border-radius: 10px;
+  height: 300px;
+
+}
+
+.swiper-box{
+  width: 100%;
+  height: 250px;
+}
+
+.swiper-box img {
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.swiper-pagination{
+  margin-top: 18px;
+}
+
+.movie-name{
+  padding-top: 10px;
+font-size: 20px;
+font-weight: 900;
+line-height: 25.48px;
+text-align: left;
+
+}
+
+
 

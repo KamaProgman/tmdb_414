@@ -13,6 +13,8 @@ body {
     max-width: 1440px;
     height: 100%;
     margin: 0 auto;
+}
+.now-playing-box {
     color: #fff;
 }
 
@@ -91,4 +93,21 @@ body {
 
 .low-rating {
     background-color: #cc0000;
+}
+
+.all-movies {
+    width: 170px;
+    height: 61px;
+    border-radius: 10px;
+    background: none;
+    border: 1px solid white;
+    color: white;
+    font-size: 15px;
+}
+.btn-all-movies {
+    text-align: center;
+    margin: 20px;
+}
+button{
+    cursor: pointer;
 }

@@ -13,7 +13,7 @@ export async function getData(endpoint) {
       }
     });
 
-    return res.data
+    return res
   } catch (error) {
     console.log(error);
     throw error

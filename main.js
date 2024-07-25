@@ -1,18 +1,11 @@
-import { getData } from "./libs/http"
+import { ReloadPosters, addPostersToSwiper } from "./components/posters";
+import { getData } from "./libs/http";
+import { reload } from "./libs/utils";
 
-let swiper = new Swiper('.swiper', {
-  direction: 'horizontal',
-  loop: false,
-  spaceBetween: 10,
-  slidesPerView: 4,
-  freeMode: true,
-
-  pagination: {
-    el: ".swiper-pagination",
-    type: "progressbar",
-  }
-})
 
 getData('movie/now_playing')
-.then(res => console.log(res))
-.catch(error => console.error(error))
+    .then(res => {
+        console.log(res.data);
+        addPostersToSwiper(res.data.results);    
+    })
+    .catch(error => console.error(error));

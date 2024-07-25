@@ -13,7 +13,7 @@ rating.className = 'rating';
 
 img.src = "https://image.tmdb.org/t/p/original" + item.poster_path
 img.alt = item.title;
-rating.textContent = item.vote_average;
+rating.textContent = item.vote_average.toFixed(1);
 title.textContent = item.title;
 genre.textContent = item.release_date;
 

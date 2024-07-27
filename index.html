@@ -3,7 +3,6 @@
 	<head>
 		<meta charset="UTF-8" />
 		<link rel="icon" type="image/svg+xml" href="/vite.svg" />
-		<link rel="stylesheet" href="/style.css" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="./style.css" />
 		<link
@@ -15,6 +14,46 @@
 	</head>
 	<body>
 		<div class="container">
+			<header>
+				<div class="left">
+					<a href="/"><img src="/public/Логотип.svg" alt="" /></a>
+					<img src="/public/media.png" alt="" />
+				</div>
+				<div class="center">
+					<p>Афиша</p>
+					<p>Медиа</p>
+					<p>Фильмы</p>
+					<p>Актеры</p>
+					<p>Новости</p>
+					<p>Подборки</p>
+					<p>Категории</p>
+				</div>
+				<div class="right">
+					<button class="search">
+						<img src="/public/Vector.svg" alt="" />
+					</button>
+					<button class="signin">Войти</button>
+				</div>
+			</header>
+
+			<div class="now-playing-box">
+				<div class="header">
+					<h1>Сейчас в кино</h1>
+					<nav class="nav">
+						<a href="#" class="active">Все</a>
+						<a href="#">Боевики</a>
+						<a href="#">Приключения</a>
+						<a href="#">Комедии</a>
+						<a href="#">Фантастика</a>
+						<a href="#">Триллеры</a>
+						<a href="#">Драма</a>
+					</nav>
+				</div>
+				<div class="movies-box" id="movies"></div>
+				<div class="btn-all-movies">
+					<button class="all-movies">Все новинки</button>
+				</div>
+			</div>
 			<div class="new__trailers__box">
 				<div class="trailer__title">
 					<div class="left__title">
@@ -32,7 +71,6 @@
 				</div>
 
 				<div class="movie__box">
-					<!-- <img src="https://avatars.mds.yandex.net/i?id=a6228bf43b09b1b1026b08ca4bdd30035deefc51-12544827-images-thumbs&n=13" alt="" class="movie"> -->
 					<iframe
 						width="560"
 						height="315"
@@ -78,153 +116,93 @@
 					</div>
 				</div>
 
-				<div class="swiper mySwiper">
-					<div class="swiper-wrapper">
-						<div class="swiper-slide">
-							<div class="swiper-box">
-								<img
-									src="https://avatars.mds.yandex.net/i?id=a6228bf43b09b1b1026b08ca4bdd30035deefc51-12544827-images-thumbs&n=13"
-									alt=""
-									class="swiper-movie"
-								/>
-							</div>
-							<h3 class="movie-name">Spider-Man</h3>
-						</div>
-
-						<div class="swiper-slide">
-							<div class="swiper-box">
-								<img
-									src="https://avatars.mds.yandex.net/i?id=88111e17ed0750d61b7b2aed99ae217cc2b370fc-12482641-images-thumbs&n=13"
-									alt=""
-									class="swiper-movie"
-								/>
-							</div>
-							<h3 class="movie-name">Mulan</h3>
-						</div>
-
-						<div class="swiper-slide">
-							<div class="swiper-box">
-								<img
-									src="https://avatars.mds.yandex.net/i?id=a6228bf43b09b1b1026b08ca4bdd30035deefc51-12544827-images-thumbs&n=13"
-									alt=""
-									class="swiper-movie"
-								/>
-							</div>
-							<h3 class="movie-name">Spiderman</h3>
-						</div>
-
-						<div class="swiper-slide">
-							<div class="swiper-box">
-								<img
-									src="https://avatars.mds.yandex.net/i?id=88111e17ed0750d61b7b2aed99ae217cc2b370fc-12482641-images-thumbs&n=13"
-									alt=""
-									class="swiper-movie"
-								/>
-							</div>
-							<h3 class="movie-name">Mulan</h3>
-						</div>
-
-						<div class="swiper-slide">
-							<div class="swiper-box">
-								<img
-									src="https://avatars.mds.yandex.net/i?id=a6228bf43b09b1b1026b08ca4bdd30035deefc51-12544827-images-thumbs&n=13"
-									alt=""
-									class="swiper-movie"
-								/>
-							</div>
-							<h3 class="movie-name">Spiderman</h3>
-						</div>
-					</div>
+				<div class="swiper mySwiper" id="swiper-box">
+					<div class="swiper-wrapper"></div>
 					<div class="swiper-pagination"></div>
 				</div>
-			</div>
-			<div class="now-playing-box">
-				<div class="header">
-					<h1>Сейчас в кино</h1>
-					<nav class="nav">
-						<a href="#" class="active">Все</a>
-						<a href="#">Боевики</a>
-						<a href="#">Приключения</a>
-						<a href="#">Комедии</a>
-						<a href="#">Фантастика</a>
-						<a href="#">Триллеры</a>
-						<a href="#">Драма</a>
-					</nav>
+
+				<div class="box-popular">
+					<div class="header">
+						<h1>Популярные фильмы</h1>
+						<nav class="nav">
+							<a href="#" class="active">Все время</a>
+							<a href="#">2020</a>
+							<a href="#">2019</a>
+							<a href="#">2018</a>
+							<a href="#">2017</a>
+							<a href="#">2016</a>
+							<a href="#">2015</a>
+						</nav>
+					</div>
+
+					<div class="popular-movies" id="popular-movies"></div>
 				</div>
-				<div class="movies-box">
-					<div class="movie">
-						<img src="/public/Фото-8.png" alt="Побег из Претории" />
-						<div class="movie-info">
-							<div class="rating">6.70</div>
-							<h3>Побег из Претории</h3>
-							<p>Триллер</p>
-						</div>
+
+				<div class="box-actors">
+					<div class="header">
+						<h1>Популярные персоны</h1>
+						<nav class="nav">
+							<a href="#" class="active">За год</a>
+							<a href="#">За месяц</a>
+							<a href="#">За неделю</a>
+						</nav>
 					</div>
-					<div class="movie">
-						<img src="/public/Фото-7.png" alt="Джокер" />
-						<div class="movie-info">
-							<div class="rating">8.50</div>
-							<h3>Джокер</h3>
-							<p>Триллер, драма, криминал</p>
+
+					<div class="popular-actors">
+						<div class="celebs" id="popular-actors">
+							<!-- <div class="actor-info">
+                    <div><p class="rank">1-е место</p></div>
+                    <div>
+                    <p class="name">Квентин Тарантино</p>
+                    <p class="name-en">Quentin Tarantino</p>
+                    <p class="age">57 лет</p>
+                </div>
+                </div>
+
+                <div class="actor-info">
+                    <div><p class="rank">2-е место</p></div>
+                    <div>
+                    <p class="name">Джейсон Стейтем</p>
+                    <p class="name-en">Jason Statham</p>
+                    <p class="age">52 лет</p>
+                    </div>
+                    </div> -->
 						</div>
+						<div class="actor-rating-box" id="actors-box"></div>
 					</div>
-					<div class="movie">
-						<img
-							src="/public/Фото.png"
-							alt="Звёздные войны: Скайуокер. Восход"
-						/>
-						<div class="movie-info">
-							<div class="rating">6.70</div>
-							<h3>Звёздные войны: Скайуокер. Восход</h3>
-							<p>Фантастика, фэнтези, боевик, приключения</p>
-						</div>
-					</div>
-					<div class="movie">
-						<img src="/public/Фото-2.png" alt="Джентльмены" />
-						<div class="movie-info">
-							<div class="rating">8.00</div>
-							<h3>Джентльмены</h3>
-							<p>Боевик, комедия, криминал</p>
-						</div>
-					</div>
-					<div class="movie">
-						<img src="/public/Фото-3.png" alt="Ford против Ferrari" />
-						<div class="movie-info">
-							<div class="rating">8.10</div>
-							<h3>Ford против Ferrari</h3>
-							<p>Биография, спорт, драма, боевик</p>
-						</div>
-					</div>
-					<div class="movie">
-						<img src="/public/Фото-4.png" alt="3022" />
-						<div class="movie-info">
-							<div class="rating low-rating">4.90</div>
-							<h3>3022</h3>
-							<p>Фантастика, триллер</p>
-						</div>
-					</div>
-					<div class="movie">
-						<img
-							src="/public/Фото-5.png"
-							alt="Хищные птицы: Потрясающая история Харли Квинн"
-						/>
-						<div class="movie-info">
-							<div class="rating">6.20</div>
-							<h3>Хищные птицы: Потрясающая история Харли Квинн</h3>
-							<p>Боевик, криминал, комедия</p>
-						</div>
-					</div>
-					<div class="movie">
-						<img src="/public/Фото-6.png" alt="Плохие парни навсегда" />
-						<div class="movie-info">
-							<div class="rating">6.90</div>
-							<h3>Плохие парни навсегда</h3>
-							<p>Боевик, комедия, криминал</p>
+				</div>
+			</div>
+			<div class="modal">
+				<div class="modal__dialog">
+					<div class="modal__content">
+						<div data-close class="modal__close">&times;</div>
+						<form action="#">
+							<input type="text" class="search" name="search" />
+						</form>
+						<div class="flex-text">
+							<h2>Movies</h2>
+							<h2>Tv</h2>
+							<h2>People</h2>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+		<footer>
+			<div class="container footer_container">
+				<img src="/public/social_media.svg" alt="" />
+				<nav>
+					<a href="#">Афиша</a>
+					<a href="#">Новости</a>
+					<a href="#">Персоны</a>
+					<a href="#">Рейтинги</a>
+					<a href="#">Рецензии</a>
+					<a href="#">Каталог фильмов</a>
+				</nav>
+				<p>2020 © Kinoarea. Все права защищены</p>
+				<a class="confidance" href="#">Политика конфиденциальности</a>
+			</div>
+		</footer>
 
 		<script type="module" src="/main.js"></script>
 	</body>

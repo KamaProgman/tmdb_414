@@ -31,7 +31,7 @@ getData('person/popular')
 .then(res => {
   console.log(res.data);
   reload(res.data.results.slice(0,2), 'popular-actors', PopularActors)
-  reload(res.data.results.slice(0,4), 'actors-box', ActorsRating)
+  reload(res.data.results.slice(2,6), 'actors-box', ActorsRating)
 
 })
 .catch(error => console.error(error))

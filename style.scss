@@ -16,8 +16,6 @@ a {
 .container {
     margin: 0 auto;
     max-width: 1440px;
-    max-height: 100vh;
-    height: 100%;
     padding: 10px 90px;
     background-color: #1E2538;
     padding-bottom: 20px;
@@ -304,6 +302,7 @@ color: #F2F60F;
         position: fixed;
         left: 0;
         top: 0;
+        z-index: 100;
         visibility: hidden;
         transition: 0.5s;
         opacity: 0;

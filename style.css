@@ -347,6 +347,7 @@ color: #FFFFFF59;
 
 
 .modal {
+  display: none;
   width: 100%;
   position: fixed;
   top: 0;

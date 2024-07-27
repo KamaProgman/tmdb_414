@@ -22,16 +22,12 @@ getData('movie/top_rated')
 getData('person/popular')
 .then(res => {
     reload(res.data.results.slice(0,3), 'actors-box', ActorsRating)
+    reload(res.data.results.slice(0,2), 'popular-actors', PopularActors)
 })
 .catch(error => console.error(error))
 
-getData('person/popular')
-.then(res => {
-    console.log(res.data);
-    reload(res.data.results.slice(0,2), 'popular-actors', PopularActors)
-  })
-  .catch(error => console.error(error))
-  
+
+ 
 
 let btnAllMovies = document.querySelector('.all-movies')
 btnAllMovies.onclick = () => {

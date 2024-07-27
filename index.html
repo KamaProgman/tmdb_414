@@ -3,7 +3,6 @@
     <head>
         <meta charset="UTF-8" />
         <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-        <link rel="stylesheet" href="/style.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="./style.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
@@ -29,52 +28,127 @@
           </div>
           <div class="btn-all-movies"> <button class="all-movies">Все новинки</button></div>
         </div>
-        </div>
-      <div class="new__trailers__box">
-          <div class="trailer__title">
-              <div class="left__title">
-                  <h2>Новые трейлеры</h2>
-              </div>
-
-              <div class="right__title">
-                  <a href="">Все трейлеры</a>
-                  <img src="https://cdn3.iconfinder.com/data/icons/arrow-outline-8/32/right_2-512.png" alt="arrow" class="view__trailer__arrow">
-              </div>
-          </div>
-
-          <div class="movie__box">
-              <iframe width="560" height="315" src="https://www.youtube.com/embed/F478PvRt74Y?si=IbF2ZUSBZyv_YgC0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen class="movie"></iframe>
-          </div>
-
-          <div class="movie__cont">
-              <div class="left__cont">
-                  <h2 class="movie__name">Spider-Man</h2>
-                  <img src="https://cdn4.iconfinder.com/data/icons/social-media-flat-7/64/Social-media_VK-512.png" alt="vk" class="social_media_icon">
-                  <img src="https://cdn1.iconfinder.com/data/icons/social-media-outline-6/128/SocialMedia_Instagram-Outline-512.png" alt="insta" class="social_media_icon">
-                  <img src="https://cdn1.iconfinder.com/data/icons/social-media-outline-6/128/SocialMedia_Facebook-Outline-1024.png" alt="facebook" class="social_media_icon">
-              </div>
-
-              <div class="right__cont">
-               <div class="like-box">
-                  <img src="./images/Лайк.png" alt="">
-                  <span>33</span>
-               </div>
-               <div class="dislike-box">
-                   <img src="./images/Дисайк.png" alt="">
-                   <span>33</span>
-               </div>
-              </div>
-          </div>
-
-          <div class="swiper mySwiper" id="swiper-box">
-              <div class="swiper-wrapper">
- 
-              </div>
-              <div class="swiper-pagination"></div>
+        <div class="new__trailers__box">
+            <div class="trailer__title">
+                <div class="left__title">
+                    <h2>Новые трейлеры</h2>
+                </div>
+  
+                <div class="right__title">
+                    <a href="">Все трейлеры</a>
+                    <img src="https://cdn3.iconfinder.com/data/icons/arrow-outline-8/32/right_2-512.png" alt="arrow" class="view__trailer__arrow">
+                </div>
             </div>
+  
+            <div class="movie__box">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/F478PvRt74Y?si=IbF2ZUSBZyv_YgC0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen class="movie"></iframe>
+            </div>
+  
+            <div class="movie__cont">
+                <div class="left__cont">
+                    <h2 class="movie__name">Spider-Man</h2>
+                    <img src="https://cdn4.iconfinder.com/data/icons/social-media-flat-7/64/Social-media_VK-512.png" alt="vk" class="social_media_icon">
+                    <img src="https://cdn1.iconfinder.com/data/icons/social-media-outline-6/128/SocialMedia_Instagram-Outline-512.png" alt="insta" class="social_media_icon">
+                    <img src="https://cdn1.iconfinder.com/data/icons/social-media-outline-6/128/SocialMedia_Facebook-Outline-1024.png" alt="facebook" class="social_media_icon">
+                </div>
+  
+                <div class="right__cont">
+                 <div class="like-box">
+                    <img src="./images/Лайк.png" alt="">
+                    <span>33</span>
+                 </div>
+                 <div class="dislike-box">
+                     <img src="./images/Дисайк.png" alt="">
+                     <span>33</span>
+                 </div>
+                </div>
+            </div>
+  
+            <div class="swiper mySwiper" id="swiper-box">
+                <div class="swiper-wrapper">
+   
+                </div>
+                <div class="swiper-pagination"></div>
+              </div>
+  
+              <div class="box-popular">
 
-      </div>
-  </div>
+                  <div class="header">
+                    <h1>Популярные фильмы</h1>
+                    <nav class="nav">
+                        <a href="#" class="active">Все время</a>
+                        <a href="#">2020</a>
+                        <a href="#">2019</a>
+                        <a href="#">2018</a>
+                        <a href="#">2017</a>
+                        <a href="#">2016</a>
+                        <a href="#">2015</a>
+                    </nav>
+                </div>
+    
+                <div class="popular-movies" id="popular-movies"></div>
+              </div>
+
+              <div class="box-actors">
+               <div class="header">
+                <h1>Популярные персоны</h1>
+                <nav class="nav">
+                    <a href="#" class="active">За год</a>
+                    <a href="#">За месяц</a>
+                    <a href="#">За неделю</a>
+                </nav>
+               </div>
+
+               <div class="popular-actors" >
+                <div class="celebs" id="popular-actors">
+
+                <!-- <div class="actor-info">
+                    <div><p class="rank">1-е место</p></div>
+                    <div>
+                    <p class="name">Квентин Тарантино</p>
+                    <p class="name-en">Quentin Tarantino</p>
+                    <p class="age">57 лет</p>
+                </div>
+                </div>
+
+                <div class="actor-info">
+                    <div><p class="rank">2-е место</p></div>
+                    <div>
+                    <p class="name">Джейсон Стейтем</p>
+                    <p class="name-en">Jason Statham</p>
+                    <p class="age">52 лет</p>
+                    </div>
+                    </div> -->
+                    
+                </div>
+                <div class="actor-rating-box"  id="actors-box">
+                      
+                </div>
+         </div>
+
+         
+              </div>
+            </div>
+            <div class="modal">
+                <div class="modal__dialog">
+                    <div class="modal__content">
+                      <div data-close class="modal__close">&times;</div>
+                    <form action="#">
+                     <input type="text" class="search" name="search">
+                    </form>
+                    <div class="flex-text">
+                        <h2>Movies</h2>
+                        <h2>Tv</h2>
+                        <h2>People</h2>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+        
+    </div>
+
+      
     <script type="module" src="/main.js"></script>
   </body>
 </html>

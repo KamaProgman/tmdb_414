@@ -179,11 +179,14 @@ text-align: left;
     opacity: 1;
 }
 
-.movies-box {
+.movies-box,
+.popular-movies
+ {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
     justify-content: center;
+  
 }
 
 .movie {
@@ -245,3 +248,156 @@ button{
     cursor: pointer;
 }
 
+
+.actor-rating-box{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #1B2133;
+  border-radius: 10px;
+  width: 400px;
+      height: 400px;
+      
+  .actor-rating{
+    padding: 18px;
+    border-bottom: 1px solid #1E2538;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+.actor-name{
+  color: white;
+}
+
+.actor-name-en{
+  color: #3B486B;
+}
+
+.yellow{
+  color: #F2F60F;
+}
+
+.popular-actors {
+  display: flex;
+  justify-content: space-between;
+  
+  .celebs{
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(1, 300px);
+      gap: 40px;
+      .actor-info{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background-color: #00cc66;
+      width: 400px;
+      height: 400px;
+      padding: 20px;
+      border-radius: 10px;
+  }
+  }
+}
+.rank, .age{
+color: #F2F60F;
+}
+.name-en {
+color: #FFFFFF59;
+}
+
+.side {
+ 
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.person-side {
+  width: 400px;
+  height: 92px;
+  background-color: #2d2d44;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.person-side .rank {
+  color: #F2F60F;
+  margin-bottom: 5px;
+}
+
+.person-side .name {
+  font-size: 1em;
+}
+
+.person-side .name-en {
+  font-size: 0.8em;
+  color: #aaaaaa;
+  margin-top: 3px;
+}
+
+.person-side .age {
+  margin-top: 5px;
+}
+
+
+.modal {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1050;
+ opacity: 0.9;
+  height: 100vh;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, .5);
+}
+
+.modal__dialog {
+  max-width: 1260px;
+  height: 100vh;
+    margin: 40px auto;
+    position: relative;
+}
+
+.modal__content {
+  background-color: rgba(0, 0, 0, .5);
+  border: 1px solid rgba(0, 0, 0, .2);
+  border-radius: 4px;
+  overflow-y: auto;
+  height: 100vh;
+}
+
+.modal__close {
+  position: absolute;
+  top: 5px;
+  left: 98%;
+  font-size: 30px;
+  color: #000;
+  opacity: 0.5;
+  font-weight: 700;
+  border: none;
+  background-color: transparent;
+  cursor: pointer
+}
+
+.search{
+  width: 100%;
+  height: 45px;
+  border: none;
+  border-radius: 5px;
+}
+
+.flex-text{
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+  font-size: 20px;
+  line-height: 15px;
+}

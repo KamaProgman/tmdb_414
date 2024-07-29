@@ -1,3 +1,5 @@
+import { getData } from "../libs/http";
+
 let swiper;
 function addSwiper() {
     swiper = new Swiper('#swiper-box', {
@@ -27,8 +29,19 @@ function ReloadPosters(item) {
     img.className = 'swiper-movie';
     movieName.className = 'movie-name';
 
-    swiperBox.appendChild(img);
+    swiperBox.append(img);
     swiperSlide.append(swiperBox, movieName)
+
+    swiperSlide.onclick = () => {
+        let iframe = document.querySelector('iframe')
+        getData(`movie/${item.id}/videos`)
+        .then(res => {
+            let filtered = res.data.results.find(item => item.type == 'Trailer')
+            iframe.setAttribute('src', `https://www.youtube.com/embed/${filtered.key}`)
+            console.log(res.data);
+        })
+        .catch(error => console.error(error))
+    }
 
     return swiperSlide;
 }
@@ -38,7 +51,7 @@ function addPostersToSwiper(posters) {
     
     posters.forEach(item => {
         const slide = ReloadPosters(item);
-        swiperWrapper.appendChild(slide);
+        swiperWrapper.append(slide);
     });
 
     addSwiper();

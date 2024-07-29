@@ -23,6 +23,88 @@ a {
     color: #fff;
 }
 
+/* -HEADER---------------- */
+
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-top: 20px;
+}
+
+header .left {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	gap: 10px;
+}
+
+header .center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 20px;
+}
+
+header .center p {
+	color: white;
+}
+
+header .right {
+	display: flex;
+	justify-content: right;
+	align-items: center;
+	gap: 20px;
+}
+
+header .right .search {
+	width: 55px;
+	height: 52px;
+	background-color: #fff;
+	border: none;
+	border-radius: 5px;
+}
+
+header .right .signin {
+	width: 138px;
+	height: 53px;
+	border-radius: 10px;
+	background-color: rgb(54, 87, 203);
+	color: white;
+	border: none;
+}
+
+/* -FOOTER--------------------- */
+footer {
+	
+	padding-top: 50px;
+}
+
+.footer_container {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	gap: 50px;
+}
+
+footer nav {
+	display: flex;
+	gap: 50px;
+}
+
+footer nav a {
+	color: white;
+	text-decoration: none;
+}
+
+footer p {
+	color: rgb(169, 173, 184);
+}
+
+footer .confidance {
+	color: rgb(169, 173, 184);
+}
+
 .trailer__title {
     color: white;
     display: flex;
@@ -173,7 +255,7 @@ a {
     opacity: 1;
 }
 
-.movies-box, .popular-movies {
+.movies-box, .popular-movies, .upcoming-movies {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
@@ -184,6 +266,10 @@ a {
     background-color: #1E2538;
     position: relative;
     cursor: pointer;
+}
+.movie:hover {
+    background-color: #3657CBA6;
+    z-index: 100;
 }
 
 .movie img {
@@ -243,23 +329,24 @@ button {
 
 
 .popular-actors {
+    max-width: 100%;
+    height: 100%;
     display: flex;
     gap: 40px;
     
     .celebs{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: 40px;
+        gap: 15px;
         .actor-info{
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         background-color: #00cc66;
-        width: 400px;
-        height: 400px;
+        width: 430px;
+        height: 500px;
         padding: 20px;
         border-radius: 10px;
-        background-image: url(https://image.tmdb.org/t/p/original/rTbVFZMvUViFCIa5AXlBX3P6vfR.jpg);
         background-size: cover;
         background-repeat: no-repeat;
     }
@@ -272,18 +359,16 @@ color: #F2F60F;
  color: #FFFFFF59;
 }
 
-.side {
-   
+.side { 
     display: flex;
     flex-direction: column;
-    gap: 10px;
 }
-
 .person-side {
-    width: 400px;
-    height: 92px;
+    width: 360px;
+    height: 110px;
     background-color: #2d2d44;
     padding: 10px;
+    margin-bottom: 20px;
     border-radius: 10px;
     text-align: left;
     display: flex;

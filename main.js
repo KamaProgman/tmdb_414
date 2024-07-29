@@ -9,8 +9,7 @@ let btnAllMovies = document.querySelector('.all-movies')
 
 getData('movie/now_playing')
     .then(res => {
-        console.log(res.data);
-        addPostersToSwiper(res.data.results);    
+        console.log(res.data);   
         reload(res.data.results.slice(0,8), 'movies', NowPlaying)
     })
     .catch(error => console.error(error));
@@ -20,7 +19,14 @@ getData('movie/now_playing')
     window.location.replace('/pages/NowPlayingMovies/')
   }
 
-  getData('movie/top_rated')
+  getData('movie/upcoming')
+  .then(res => {
+    reload(res.data.results.slice(0,4), 'upcoming-movies', NowPlaying)
+    addPostersToSwiper(res.data.results);    
+})
+.catch(error => console.error(error));
+
+  getData('movie/popular')
 .then(res => {
   reload(res.data.results.slice(0,4), 'popular-movies', NowPlaying)
 

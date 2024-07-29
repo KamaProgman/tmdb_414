@@ -1,14 +1,5 @@
 function ActorsRating(item){
-    // <div class="person-side">
-    // <div>
-    // <p class="name">Тинто Брасс</p>
-    // <p class="name-en">Tinto Brass</p>
-    // <p class="age">87 лет</p>
-    // </div>
-    // <div><p class="rank">3-е место</p></div>
-    // </div>
-
-    const actorBox = document.querySelector('.side')
+    const actorBox = document.querySelector('.actor-rating-box')
 
     const actorInfo = document.createElement('div')
     const div = document.createElement('div')

@@ -1,3 +1,5 @@
+import { getData } from "../libs/http";
+
 let swiper;
 function addSwiper() {
     swiper = new Swiper('#swiper-box', {
@@ -29,6 +31,17 @@ function ReloadPosters(item) {
 
     swiperBox.appendChild(img);
     swiperSlide.append(swiperBox, movieName)
+
+    swiperSlide.onclick = () => {
+        let iframe = document.querySelector('iframe')
+        getData(`movie/${item.id}/videos`)
+        .then(res => {
+            let filtered = res.data.results.find(item => item.type == "Trailer")
+
+            iframe.setAttribute('src', `https://www.youtube.com/embed/${filtered.key}` )
+        })
+        .catch(error => console.error(error))
+    }
 
     return swiperSlide;
 }

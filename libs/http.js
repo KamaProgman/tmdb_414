@@ -7,6 +7,9 @@ let accessToken = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI3MDExNmY3NmEwZWJjNTQ3NzE5ZTg1
 export async function getData(endpoint) {
   try {
     let res = await axios.get(`${apiUrl}/${endpoint}`, {
+      params: {
+        language: "ru-RU"
+      },
       headers: {
         accept: 'application/json',
         Authorization: `Bearer ${accessToken}`

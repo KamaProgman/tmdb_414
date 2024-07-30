@@ -14,25 +14,7 @@
 <body>
     <div class="container">
         <header>
-            <div class="left">
-                <a href="/"><img src="/public/Логотип.svg" alt="" /></a>
-                <img src="/public/media.png" alt="" />
-            </div>
-            <div class="center">
-                <p>Афиша</p>
-                <p>Медиа</p>
-                <p>Фильмы</p>
-                <p>Актеры</p>
-                <p>Новости</p>
-                <p>Подборки</p>
-                <p>Категории</p>
-            </div>
-            <div class="right">
-                <button class="search">
-                    <img src="/public/Vector.svg" alt="" />
-                </button>
-                <button class="signin">Войти</button>
-            </div>
+         
         </header>
 
         <div class="now-playing-box">
@@ -130,58 +112,45 @@
 
                 <div class="popular-actors">
                     <div class="celebs" id="popular-actors">
-                        <!-- <div class="actor-info">
-                    <div><p class="rank">1-е место</p></div>
-                    <div>
-                    <p class="name">Квентин Тарантино</p>
-                    <p class="name-en">Quentin Tarantino</p>
-                    <p class="age">57 лет</p>
-                </div>
-                </div>
-
-                <div class="actor-info">
-                    <div><p class="rank">2-е место</p></div>
-                    <div>
-                    <p class="name">Джейсон Стейтем</p>
-                    <p class="name-en">Jason Statham</p>
-                    <p class="age">52 лет</p>
-                    </div>
-                    </div> -->
+                   
                     </div>
                     <div class="actor-rating-box" id="actors-box"></div>
                 </div>
             </div>
         </div>
-        <div class="modal">
-            <div class="modal__dialog">
-                <div class="modal__content">
-                    <div data-close class="modal__close">&times;</div>
-                    <form action="#">
-                        <input type="text" class="search" name="search" />
-                    </form>
-                    <div class="flex-text">
-                        <h2>Movies</h2>
-                        <h2>Tv</h2>
-                        <h2>People</h2>
-                    </div>
+        
+        <div class="upcoming__movies">
+            <h1>Ожидаемы новинки</h1>
+            
+            <div class="upcoming-box" id="upcoming-box"></div>
+        </div>
+
+      
+
+    </div>
+    <div class="modal">
+        <div class="modal__dialog">
+            <div class="modal__content">
+               <div class="container">
+                <div data-close class="modal__close">x</div>
+                <form action="#">
+                    <img src="/public/Логотип.svg" alt="" class="modal-logo"/>
+                    <input type="text" class="inp-search" name="search" />
+                    <!-- <button class="search-btn"><img src="search-icon" alt=""></button> -->
+                </form>
+                <div class="flex-text">
+                    <div class="movies-search animation"><h2>Movies</h2></div>
+                    <div class="people-seacrh animation"> <h2>People</h2></div>
+                    <div class="tv-search animation"><h2>Tv</h2></div>
+               </div>
+                    
                 </div>
             </div>
         </div>
     </div>
+
     <footer>
-        <div class="container footer_container">
-            <img src="/public/social_media.svg" alt="" />
-            <nav>
-                <a href="#">Афиша</a>
-                <a href="#">Новости</a>
-                <a href="#">Персоны</a>
-                <a href="#">Рейтинги</a>
-                <a href="#">Рецензии</a>
-                <a href="#">Каталог фильмов</a>
-            </nav>
-            <p>2020 © Kinoarea. Все права защищены</p>
-            <a class="confidance" href="#">Политика конфиденциальности</a>
-        </div>
+       
     </footer>
 
     <script type="module" src="/main.js"></script>

@@ -21,7 +21,20 @@ function NowPlaying(item) {
     movieContainer.append(img, movieInfo)
     moviesBox.append(movieContainer)
 
+    movieContainer.onmouseenter = () =>{
+        BgImg(item)
+    }
+
     return movieContainer
 
 }
-export { NowPlaying }
+
+function BgImg(item) {
+    let body = document.body;
+    body.style.backgroundImage = `url("https://image.tmdb.org/t/p/original${item.backdrop_path}")`;
+    body.style.backgroundSize = "contain"; 
+    body.style.backgroundRepeat = "no-repeat";
+}
+
+
+export { NowPlaying}

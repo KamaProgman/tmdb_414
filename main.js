@@ -5,6 +5,19 @@ import { addPostersToSwiper } from "./components/posters";
 import { getData } from "./libs/http";
 import { reload } from "./libs/utils";
 
+let modal = document.querySelector('.modal-bg')
+let btnOpen = document.querySelector('.search')
+let btnClose = document.querySelector(".close")
+
+btnOpen.onclick = () => {
+    modal.style.visibility = "visible"
+    modal.style.opacity = "1"
+}
+btnClose.onclick = () => {
+    modal.style.visibility = "hidden"
+    modal.style.opacity = "0"
+}
+
 let btnAllMovies = document.querySelector('.all-movies')
 
 getData('movie/now_playing')

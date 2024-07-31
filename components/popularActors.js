@@ -19,7 +19,7 @@ actorAge.classList.add('age');
 actor.style.backgroundImage = `url(https://image.tmdb.org/t/p/original${item.profile_path})`
 actorRank.textContent = '1-е место';
 actorName.textContent = item.name;
-actorNameEn.textContent = item.name;
+actorNameEn.textContent = item.original_name;
 actorAge.textContent = '57 лет';
 
 div.append(actorRank)

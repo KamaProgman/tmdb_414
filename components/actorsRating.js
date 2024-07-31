@@ -16,7 +16,7 @@ function ActorsRating(item){
     actorRank.classList.add('rank')
 
     actorName.textContent = item.name
-    actorNameEn.textContent = item.name
+    actorNameEn.textContent = item.original_name
     actorAge.textContent = '87 лет'
     actorRank.textContent = '3-е место'
 

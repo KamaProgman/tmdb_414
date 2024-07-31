@@ -1,7 +1,8 @@
+import { header } from "../../components/header";
 import { NowPlaying } from "../../components/nowPlaying";
 import { getData } from "../../libs/http";
 import { reload } from "../../libs/utils";
-
+header()
 
 
   getData('movie/now_playing')

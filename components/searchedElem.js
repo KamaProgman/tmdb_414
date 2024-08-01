@@ -15,8 +15,9 @@ export function createSearchedElement(item) {
     personNameElem.className = 'person-name';
     year.className = 'year'
 
-    persImg.src = "https://image.tmdb.org/t/p/original" + item.poster_path;
-    personNameElem.textContent = item.title
+    persImg.src = item.poster_path ? `https://image.tmdb.org/t/p/original${item.poster_path}` : `https://image.tmdb.org/t/p/original${item.profile_path}`
+
+    personNameElem.textContent = item.title ? item.name : item.name
     year.textContent = item.release_date
 
     persImgBox.appendChild(persImg);

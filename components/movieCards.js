@@ -49,15 +49,15 @@ function SearchCards(item) {
     details.className = 'details';
     rating.className = 'rating-search green';
 
-    img.src = "https://image.tmdb.org/t/p/original" + item.poster_path; 
+    img.src =  item.poster_path ? `https://image.tmdb.org/t/p/original${item.poster_path}` : `https://image.tmdb.org/t/p/original${item.profile_path}`
     img.alt = item.title;
 
-    title.textContent = item.title;
+    title.textContent = item.title ? item.title : item.name
     // title.textContent = item.name
-    subtitle.textContent = item.original_title;
+    subtitle.textContent = item.original_title ? item.original_title : item.original_name
     // subtitle.textContent = item.original_name
     description.textContent = 'Боевик, триллер, драма, криминал, детектив, ...';
-    rating.textContent = item.vote_average.toFixed(1);
+    // rating.textContent = item.vote_average.toFixed(1) ? item.vote_average.toFixed(1) : item.gender;
 
     details.append(title, subtitle, description)
     card.append(img, details, rating)

@@ -42,6 +42,7 @@ function searcher(category = 'movie'){
     getData(`search/${category}?query=${search.value}`)
     .then(res => {
       reload(res.data.results, 'movies-container', SearchCards)
+      console.log(res.data.results);
     })
     .catch(error => console.error(error))
   }, 500)

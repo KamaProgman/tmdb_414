@@ -23,12 +23,12 @@
                 <h1>Сейчас в кино</h1>
                 <nav class="nav">
                     <a href="#" class="active">Все</a>
-                    <a href="#">Боевики</a>
-                    <a href="#">Приключения</a>
-                    <a href="#">Комедии</a>
-                    <a href="#">Фантастика</a>
-                    <a href="#">Триллеры</a>
-                    <a href="#">Драма</a>
+                    <a href="#" class="gener" id="action">Боевики</a>
+                    <a href="#" class="gener" id="adventure">Приключения</a>
+                    <a href="#" class="gener" id="comedy">Комедии</a>
+                    <a href="#" class="gener" id="fantasy">Фантастика</a>
+                    <a href="#" class="gener" id="thriller">Триллеры</a>
+                    <a href="#" class="gener" id="drama">Драма</a>
                 </nav>
             </div>
             <div class="movies-box" id="movies"></div>
@@ -50,7 +50,7 @@
             </div>
 
             <div class="movie__box">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/F478PvRt74Y?si=IbF2ZUSBZyv_YgC0"
+                <iframe width="560" height="315" 
                     title="YouTube video player" frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     referrerpolicy="strict-origin-when-cross-origin" allowfullscreen class="movie"></iframe>
@@ -58,7 +58,7 @@
 
             <div class="movie__cont">
                 <div class="left__cont">
-                    <h2 class="movie__name">Spider-Man</h2>
+                    <h2 class="movie__name"></h2>
                     <img src="https://cdn4.iconfinder.com/data/icons/social-media-flat-7/64/Social-media_VK-512.png"
                         alt="vk" class="social_media_icon" />
                     <img src="https://cdn1.iconfinder.com/data/icons/social-media-outline-6/128/SocialMedia_Instagram-Outline-512.png"
@@ -125,24 +125,7 @@
                 </div>
                 <div class="upcoming-movies" id="upcoming-movies"></div>
             </div>
-       <div class="modal-bg">
-        <div class="movie-site-icon"><img  src="./public/Логотип.svg" alt=""></div>
-            <div class="search-container">
-                <div class="search-bar">
-                    <input id="search" type="text" placeholder="Search...">
-                    <button><img src="/public/Поиск.png" alt=""></button>
-                </div>
-            </div>
-            <div class="tabs">
-                <div id="movie" class="tab active">Movies</div>
-                <div id="person" class="tab">People</div>
-                <div id="tv" class="tab">TV</div>
-            </div>
-            <div class="movies-container" id="movies-container">
-                
-            </div>
-            <button class="close"><img src="/public/Vector.png" alt=""></button>
-          </div>
+       
     </div>
     <footer>
         

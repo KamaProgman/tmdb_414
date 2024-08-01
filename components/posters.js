@@ -22,7 +22,7 @@ function ReloadPosters(item) {
     const movieName = document.createElement('h3');
 
     img.src = "https://image.tmdb.org/t/p/original" + item.poster_path
-    movieName.textContent = item.original_title;
+    movieName.textContent = item.title;
 
     swiperSlide.className = 'swiper-slide';
     swiperBox.className = 'swiper-box';
@@ -34,6 +34,8 @@ function ReloadPosters(item) {
 
     swiperSlide.onclick = () => {
         let iframe = document.querySelector('iframe')
+        let movieName = document.querySelector('.movie__name')
+        movieName.textContent = item.title
         getData(`movie/${item.id}/videos`)
         .then(res => {
             let filtered = res.data.results.find(item => item.type == 'Trailer')

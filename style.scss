@@ -47,7 +47,7 @@ header .center {
 	gap: 20px;
 }
 
-header .center p {
+header .center a {
 	color: white;
 }
 
@@ -234,11 +234,6 @@ footer .confidance {
     margin-bottom: 20px;
     margin-top: 20px;
 }
-
-.header h1 {
-    margin: 0;
-}
-
 .nav {
     display: flex;
     gap: 20px;
@@ -246,14 +241,14 @@ footer .confidance {
 }
 
 .nav a {
-    color: #fff;
+    color: gray;
     text-decoration: none;
     opacity: 0.7;
 }
 
 .nav a:hover,
 .nav a.active {
-    opacity: 1;
+     color: #fff;
 }
 
 .movies-box, .popular-movies, .upcoming-movies {
@@ -330,24 +325,21 @@ button {
     max-width: 100%;
     height: 100%;
     display: flex;
-    gap: 40px;
+    gap: 10px;
     
     .celebs{
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
+        display: flex;
+        gap: 10px;
+
         .actor-info{
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        background-color: #00cc66;
-        width: 430px;
-        height: 500px;
+        width: 327px;
+        height: 490px;
         padding: 20px;
         border-radius: 10px;
-        background-size: cover;
-        background-repeat: no-repeat;
-    }
+        }
     }
 }
 .rank, .age{
@@ -357,16 +349,12 @@ color: #F2F60F;
  color: #FFFFFF59;
 }
 
-.side { 
-    display: flex;
-    flex-direction: column;
-}
 .person-side {
-    width: 360px;
+    width: 600px;
     height: 110px;
     background-color: #2d2d44;
     padding: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     border-radius: 10px;
     text-align: left;
     display: flex;
@@ -436,17 +424,6 @@ color: #F2F60F;
         border-bottom: 2px solid blue;
     }
 
-    .background {
-        display: flex;
-        justify-content: center;
-        margin-top: 20px;
-    }
-
-    .background img {
-        margin: 0 10px;
-        width: 200px;
-        height: auto;
-    }
     .close{
         position: absolute;
         right: 20px;
@@ -534,9 +511,8 @@ color: #F2F60F;
 
 .rating-search {
     font-size: 24px;
-    padding: 10px 20px;
     border-radius: 5px;
-    margin-top: 30px;
+    margin-top: 40px;
 }
 
 .green {

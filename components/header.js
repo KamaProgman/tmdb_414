@@ -5,20 +5,39 @@ function header() {
                 <img src="/public/media.png" alt="" />
             </div>
             <div class="center">
-                <p>Афиша</p>
-                <p>Медиа</p>
-                <p>Фильмы</p>
-                <p>Актеры</p>
-                <p>Новости</p>
-                <p>Подборки</p>
-                <p>Категории</p>
+                <a href="#">Афиша</a>
+                <a href="#">Медиа</a>
+                <a href="#">Фильмы</a>
+                <a href="#">Актеры</a>
+                <a href="#">Новости</a>
+                <a href="#">Подборки</a>
+                <a href="#">Категории</a>
             </div>
             <div class="right">
                 <button class="search">
                     <img src="/public/Vector.svg" alt="" />
                 </button>
                 <button class="signin">Войти</button>
-            </div>`
+            </div>
+            <div class="modal-bg">
+        <div class="movie-site-icon"><img  src="./public/Логотип.svg" alt=""></div>
+            <div class="search-container">
+                <div class="search-bar">
+                    <input id="search" type="text" placeholder="Search...">
+                    <button><img src="/public/Поиск.png" alt=""></button>
+                </div>
+            </div>
+            <div class="tabs">
+                <div id="movie" class="tab active">Movies</div>
+                <div id="person" class="tab">People</div>
+                <div id="tv" class="tab">TV</div>
+            </div>
+            <div class="movies-container" id="movies-container">
+                
+            </div>
+            <button class="close"><img src="/public/Vector.png" alt=""></button>
+          </div>
+            `
   }
 
   export {header}

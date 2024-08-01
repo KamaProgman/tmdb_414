@@ -53,7 +53,9 @@ function SearchCards(item) {
     img.alt = item.title;
 
     title.textContent = item.title;
+    // title.textContent = item.name
     subtitle.textContent = item.original_title;
+    // subtitle.textContent = item.original_name
     description.textContent = 'Боевик, триллер, драма, криминал, детектив, ...';
     rating.textContent = item.vote_average.toFixed(1);
 

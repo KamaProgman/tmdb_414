@@ -17,6 +17,8 @@ actorNameEn.classList.add('name-en');
 actorAge.classList.add('age');
 
 actor.style.backgroundImage = `url(https://image.tmdb.org/t/p/original${item.profile_path})`
+actor.style.backgroundSize = "contain"; 
+actor.style.backgroundRepeat = "no-repeat";
 actorRank.textContent = '1-е место';
 actorName.textContent = item.name;
 actorNameEn.textContent = item.original_name;

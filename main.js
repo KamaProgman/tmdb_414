@@ -22,6 +22,8 @@ btnClose.onclick = () => {
     modal.style.opacity = "0"
 }
 
+
+
 let tabs = document.querySelectorAll('.tab')
 let search = document.querySelector('#search')
 tabs.forEach((tab) => {
@@ -35,17 +37,27 @@ tabs.forEach((tab) => {
 
 function searcher(category = 'movie'){
   console.log(category);
-search.onkeyup = () => {
-  getData(`search/${category}?query=${search.value}`)
-  .then(res => {
-    reload(res.data.results, 'movies-container', SearchCards)
-  })
-  .catch(error => console.error(error))
-}
+  search.onkeyup = deBounce(() =>
+   {
+    getData(`search/${category}?query=${search.value}`)
+    .then(res => {
+      reload(res.data.results, 'movies-container', SearchCards)
+    })
+    .catch(error => console.error(error))
+  }, 500)
 }
 searcher()
 
 
+function deBounce(fn, ms) {
+  let timeout;
+  return function(...args) {
+      clearTimeout(timeout); 
+      timeout = setTimeout(() => {
+          fn.apply(this, args); 
+      }, ms);
+  }
+}
 
 
 let btnAllMovies = document.querySelector('.all-movies')

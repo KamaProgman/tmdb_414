@@ -12,6 +12,8 @@
 </head>
 
 <body>
+    <div class="bg-img"></div>
+
     <div class="container">
         <header>
          
@@ -22,12 +24,12 @@
                 <h1>Сейчас в кино</h1>
                 <nav class="nav">
                     <a href="#" class="active">Все</a>
-                    <a href="#">Боевики</a>
-                    <a href="#">Приключения</a>
-                    <a href="#">Комедии</a>
-                    <a href="#">Фантастика</a>
-                    <a href="#">Триллеры</a>
-                    <a href="#">Драма</a>
+                    <a href="#" id="" class="search-tab">Боевики</a>
+                    <a href="#" class="search-tab">Приключения</a>
+                    <a href="#" id="comedy" class="search-tab">Комедии</a>
+                    <a href="#" class="search-tab">Фантастика</a>
+                    <a href="#" class="search-tab">Триллеры</a>
+                    <a href="#" id="drama" class="search-tab">Драма</a>
                 </nav>
             </div>
             <div class="movies-box" id="movies"></div>
@@ -35,6 +37,7 @@
                 <button class="all-movies">Все новинки</button>
             </div>
         </div>
+        
         <div class="new__trailers__box">
             <div class="trailer__title">
                 <div class="left__title">
@@ -49,7 +52,7 @@
             </div>
 
             <div class="movie__box">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/F478PvRt74Y?si=IbF2ZUSBZyv_YgC0"
+                <iframe width="560" height="315" 
                     title="YouTube video player" frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     referrerpolicy="strict-origin-when-cross-origin" allowfullscreen class="movie"></iframe>
@@ -120,7 +123,7 @@
         </div>
         
         <div class="upcoming__movies">
-            <h1>Ожидаемы новинки</h1>
+            <h1>Ожидаемые новинки</h1>
             
             <div class="upcoming-box" id="upcoming-box"></div>
         </div>
@@ -135,13 +138,30 @@
                 <div data-close class="modal__close">x</div>
                 <form action="#">
                     <img src="/public/Логотип.svg" alt="" class="modal-logo"/>
-                    <input type="text" class="inp-search" name="search" />
-                    <!-- <button class="search-btn"><img src="search-icon" alt=""></button> -->
+                     <div class="search-box">
+                        <input type="text" id="search" class="inp-search" name="search" />
+                        <button class="search-btn"><img src="./images/Vector(14).png" alt=""></button>
+                     </div>
                 </form>
                 <div class="flex-text">
-                    <div class="movies-search animation"><h2>Movies</h2></div>
-                    <div class="people-seacrh animation"> <h2>People</h2></div>
-                    <div class="tv-search animation"><h2>Tv</h2></div>
+                    <div class="movies-search tab active" id="movie"><h2>Movies</h2></div>
+                    <div class="people-seacrh tab" id="person"> <h2>People</h2></div>
+                    <div class="tv-search tab" id="tv"><h2>Tv</h2></div>
+               </div>
+
+               <div class="reload-box" id="reload-box">
+               
+                <!-- <div class="searched-elem">
+
+                    <div class="elem-cont">
+                        <div class="pers-img-box">
+                            <img src="./images/Дисайк.png" class="pers-img" alt="">
+                        </div>
+                        <h2 class="person-name">werwere</h2>
+                    </div>
+
+                </div> -->
+
                </div>
                     
                 </div>

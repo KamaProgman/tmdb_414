@@ -8,7 +8,8 @@ export async function getData(endpoint) {
   try {
     let res = await axios.get(`${apiUrl}/${endpoint}`, {
       params: {
-        language: "ru-RU"
+        language: "ru-RU",
+        page: 1
       },
       headers: {
         accept: 'application/json',

@@ -29,9 +29,9 @@ function NowPlaying(item) {
 }
 
 function bgImg(item) {
-    let box = document.body;
+    let box = document.querySelector('.bg-img');
     box.style.backgroundImage = `url("https://image.tmdb.org/t/p/original${item.backdrop_path}")`;
-    box.style.backgroundSize = "contain"; 
+    box.style.backgroundSize = "cover"; 
     box.style.backgroundRepeat = "no-repeat";
 }
 

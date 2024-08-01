@@ -6,13 +6,32 @@ import { PopularActors } from "./components/popularActors";
 import { addPostersToSwiper } from "./components/posters";
 import { getData } from "./libs/http";
 import { reload } from "./libs/utils";
+import { createSearchedElement } from "./components/searchedElem";
 header()
 footer()
 
+let modalBtn =  document.querySelector('.search')
+let modal = document.querySelector('.modal')
+let modalClose = document.querySelector('.modal__close')
+
+modalBtn.onclick = () => {
+  modal.classList.add('show')
+  modal.classList.add('fade')
+  modal.classList.remove('hide')
+}
+
+modalClose.onclick = () => {
+    modal.classList.add('hide')
+}
+
+
+let btnAllMovies = document.querySelector('.all-movies')
+btnAllMovies.onclick = () => {
+ window.location.replace('/pages/NowPlayingMovies/')
+}
 
 getData('movie/now_playing')
 .then(res => {
-    console.log(res.data);
     addPostersToSwiper(res.data.results);    
     reload(res.data.results.slice(0,8), 'movies', NowPlaying)
 })
@@ -43,35 +62,47 @@ getData('movie/upcoming')
 })
 .catch(error => console.error(error));
 
+let tabs = document.querySelectorAll('.tab');
+let search = document.querySelector('#search');
 
- 
+tabs.forEach((tab) => {
+    tab.onclick = () => {
+        tabs.forEach(item => item.classList.remove('active'));
+        tab.classList.add('active');
+        searcher(tab.id); 
+        console.log(tab.id);
+    }
+});
 
-let btnAllMovies = document.querySelector('.all-movies')
-btnAllMovies.onclick = () => {
- window.location.replace('/pages/NowPlayingMovies/')
+function debounce(fn, ms) {
+    let timeout;
+    return function(...args) {
+        clearTimeout(timeout); 
+        timeout = setTimeout(() => {
+            fn.apply(this, args); 
+        }, ms);
+    }
 }
 
-let modalBtn =  document.querySelector('.search')
-let modal = document.querySelector('.modal')
-let modalClose = document.querySelector('.modal__close')
-
-modalBtn.onclick = () => {
-  modal.classList.add('show')
-  modal.classList.add('fade')
-  modal.classList.remove('hide')
+function searcher(category) {
+    search.onkeyup = debounce((e) => {
+        getData(`search/${category}?query=${search.value}`)
+            .then(res => reload(res.data.results.slice(0,10), 'reload-box', createSearchedElement))
+            .catch(error => console.error(error));
+    }, 500); 
 }
 
-modalClose.onclick = () => {
-    modal.classList.add('hide')
-}
+// const genres = document.querySelectorAll('.search-tab')
 
-// // getData(`/movie/${dataId}`)
-// // .then(res => {
-// //       bg(res.data)
-// // })
-// .catch(error => console.error(error))
+// genres.forEach((item) => {
+//     item.onclick = () => {
+//         console.log(item.id);
+//     }
+// })
 
-// function bg(data) {
-//     let cartfilm = document.querySelector('.movie')
-//     cartfilm.style.backgroundImage = `url("https://image.tmdb.org/t/p/original" + ${data.backdrop_path})`
+// function genre (category){
+//     getData(`movie/${category}`)
+//     .then(res => console.log(res))
+//     .catch(error => console.error(error))
 // }
+

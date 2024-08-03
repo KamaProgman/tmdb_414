@@ -1,13 +1,15 @@
 import { ActorsRating } from "./components/actorsRating";
 import { footer } from "./components/footer";
 import { header } from "./components/header";
-import { NowPlaying, SearchCards } from "./components/movieCards";
+import { MovieGenres, NowPlaying} from "./components/movieCards";
 import { PopularActors } from "./components/popularActors";
 import { addPostersToSwiper } from "./components/posters";
+import { searcher } from "./components/searcher";
 import { getData } from "./libs/http";
 import { reload } from "./libs/utils";
 header()
 footer()
+searcher()
 
 let modal = document.querySelector('.modal-bg')
 let btnOpen = document.querySelector('.search')
@@ -22,78 +24,49 @@ btnClose.onclick = () => {
     modal.style.opacity = "0"
 }
 
-
-
-let tabs = document.querySelectorAll('.tab')
-let search = document.querySelector('#search')
-tabs.forEach((tab) => {
-  tab.onclick = () => {
-    tabs.forEach(item => item.classList.remove('active'))
-    tab.classList.add('active')
-    searcher(tab.id)
-  }
-})
-
-
-function searcher(category = 'movie'){
-  console.log(category);
-  search.onkeyup = deBounce(() =>
-   {
-    getData(`search/${category}?query=${search.value}`)
-    .then(res => {
-      reload(res.data.results, 'movies-container', SearchCards)
-      console.log(res.data.results);
-    })
-    .catch(error => console.error(error))
-  }, 500)
-}
-searcher()
-
-
-function deBounce(fn, ms) {
-  let timeout;
-  return function(...args) {
-      clearTimeout(timeout); 
-      timeout = setTimeout(() => {
-          fn.apply(this, args); 
-      }, ms);
-  }
-}
-
-
 let btnAllMovies = document.querySelector('.all-movies')
+btnAllMovies.onclick = () => {
+ window.location.replace('/pages/NowPlayingMovies/')
+}
 
-getData('movie/now_playing')
-    .then(res => {
-        console.log(res.data);   
-        reload(res.data.results.slice(0,8), 'movies', NowPlaying)
-    })
-    .catch(error => console.error(error));
+// let movieCards = document.querySelectorAll('.movie')
+// movieCards.forEach ((card) => {
+//   card.onclick = (e) => {
+//     if(e.target.classList.contains('movie')) {
+//       window.location.replace('/pages/MovieCards/')
+//       console.log(card);
+//     }
+//   }
+// })
+// console.log(movieCards);
 
 
-   btnAllMovies.onclick = () => {
-    window.location.replace('/pages/NowPlayingMovies/')
-  }
+let nowPlayingMovies = getData('movie/now_playing')
+let upcomingMovies = getData('movie/upcoming')
+let popularMovies =  getData('movie/popular')
+let popularPeople = getData('person/popular')
+const movieGenresList = getData('genre/movie/list')
+// let genresId = movieGenresList.data.genres.id
+let movieGenres = getData('discover/movie')
+// console.log(genresId);
+console.log(movieGenres);
 
-  getData('movie/upcoming')
-  .then(res => {
-    reload(res.data.results.slice(0,4), 'upcoming-movies', NowPlaying)
-    addPostersToSwiper(res.data.results);    
-})
-.catch(error => console.error(error));
+console.log(movieGenresList);
 
-  getData('movie/popular')
-.then(res => {
-  reload(res.data.results.slice(0,4), 'popular-movies', NowPlaying)
+Promise.all([nowPlayingMovies, upcomingMovies, popularMovies, popularPeople, movieGenresList, movieGenres])
+.then(([nowPlayingMovies, upcomingMovies, popularMovies, popularPeople, movieGenresList, movieGenres]) => {
+  reload(nowPlayingMovies.data.results.slice(0,8), 'movies', NowPlaying)
 
-})
-.catch(error => console.error(error))
+  reload(upcomingMovies.data.results.slice(0,4), 'upcoming-movies', NowPlaying)
+  addPostersToSwiper(upcomingMovies.data.results);
+  
+  reload(popularMovies.data.results.slice(0,4), 'popular-movies', NowPlaying)
 
-getData('person/popular')
-.then(res => {
-  console.log(res.data);
-  reload(res.data.results.slice(0,2), 'popular-actors', PopularActors)
-  reload(res.data.results.slice(2,6), 'actors-box', ActorsRating)
+  reload(popularPeople.data.results.slice(0,2), 'popular-actors', PopularActors)
+  reload(popularPeople.data.results.slice(2,6), 'actors-box', ActorsRating)
 
+  reload(movieGenresList.data.genres.slice(0,6), 'genre-box', MovieGenres)
+  
+  
 })
 .catch(error => console.error(error))

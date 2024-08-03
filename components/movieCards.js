@@ -24,6 +24,14 @@ function NowPlaying(item) {
     movieContainer.onmouseenter = () =>{
         BgImg(item)
     }
+   
+        movieContainer.onclick = (e) => {
+          if(e.target.classList.contains('movie')) {
+            window.location.replace('/pages/MovieCards/')
+            console.log(card);
+          }
+        }
+      
 
     return movieContainer
 
@@ -53,9 +61,7 @@ function SearchCards(item) {
     img.alt = item.title;
 
     title.textContent = item.title ? item.title : item.name
-    // title.textContent = item.name
     subtitle.textContent = item.original_title ? item.original_title : item.original_name
-    // subtitle.textContent = item.original_name
     description.textContent = 'Боевик, триллер, драма, криминал, детектив, ...';
     // rating.textContent = item.vote_average.toFixed(1) ? item.vote_average.toFixed(1) : item.gender;
 
@@ -66,4 +72,18 @@ function SearchCards(item) {
     return card
 }
 
-export { NowPlaying, SearchCards}
+ function MovieGenres (item) {
+    const div = document.createElement('div')
+    div.className = 'search-tab'
+    div.setAttribute = ('id', 'search-tab')
+    div.textContent = item.name
+   
+        div.onclick = () => {
+              localStorage.setItem('genreId', item.id)
+              console.log(div);
+        }
+      
+    return div
+}
+
+export { NowPlaying, SearchCards, MovieGenres}

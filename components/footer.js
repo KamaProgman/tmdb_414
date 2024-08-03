@@ -1,7 +1,7 @@
 function footer(){
     let footer = document.querySelector('footer')
     footer.innerHTML = `  <div class="container footer_container">
-            <img src="/public/social_media.svg" alt="" />
+            <img src="/social_media.svg" alt="" />
             <nav>
                 <a href="#">Афиша</a>
                 <a href="#">Новости</a>

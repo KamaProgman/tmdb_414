@@ -8,4 +8,14 @@ function reload(arr, place, Element) {
     }
 }
 
-export { reload }
+function deBounce(fn, ms) {
+    let timeout;
+    return function(...args) {
+        clearTimeout(timeout); 
+        timeout = setTimeout(() => {
+            fn.apply(this, args); 
+        }, ms);
+    }
+  }
+
+export { reload, deBounce }

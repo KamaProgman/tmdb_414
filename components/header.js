@@ -1,8 +1,8 @@
 function header() {
     let header = document.querySelector('header')
     header.innerHTML = `  <div class="left">
-                <a href="/"><img src="/public/Логотип.svg" alt="" /></a>
-                <img src="/public/media.png" alt="" />
+                <a href="/"><img src="/Логотип.svg" alt="" /></a>
+                <img src="/media.png" alt="" />
             </div>
             <div class="center">
                 <a href="#">Афиша</a>
@@ -15,16 +15,16 @@ function header() {
             </div>
             <div class="right">
                 <button class="search">
-                    <img src="/public/Vector.svg" alt="" />
+                    <img src="/Vector.svg" alt="" />
                 </button>
                 <button class="signin">Войти</button>
             </div>
             <div class="modal-bg">
-        <div class="movie-site-icon"><img  src="./public/Логотип.svg" alt=""></div>
+        <div class="movie-site-icon"><img  src="/Логотип.svg" alt=""></div>
             <div class="search-container">
                 <div class="search-bar">
                     <input id="search" type="text" placeholder="Search...">
-                    <button><img src="/public/Поиск.png" alt=""></button>
+                    <button><img src="/Поиск.png" alt=""></button>
                 </div>
             </div>
             <div class="tabs">
@@ -35,7 +35,7 @@ function header() {
             <div class="movies-container" id="movies-container">
                 
             </div>
-            <button class="close"><img src="/public/Vector.png" alt=""></button>
+            <button class="close"><img src="/Vector.png" alt=""></button>
           </div>
             `
   }

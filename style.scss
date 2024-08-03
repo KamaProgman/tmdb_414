@@ -143,7 +143,7 @@ footer .confidance {
     width: 100%;
     height: 700px;
 
-    .movie {
+    .movie-trailer {
         width: 100%;
         height: 100%;
         object-fit: cover;
@@ -233,21 +233,30 @@ footer .confidance {
     justify-content: space-between;
     margin-bottom: 20px;
     margin-top: 20px;
+
+    h1 {
+       color: #fff;
+       z-index: 100;
+    }
 }
 .nav {
     display: flex;
     gap: 20px;
     margin-top: 10px;
+
+    position: relative;
+    z-index: 10;
 }
 
-.nav a {
+.nav div {
     color: gray;
     text-decoration: none;
     opacity: 0.7;
+    cursor: pointer;
 }
 
-.nav a:hover,
-.nav a.active {
+.nav div:hover,
+.nav div.active {
      color: #fff;
 }
 

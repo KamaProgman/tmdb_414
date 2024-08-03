@@ -21,15 +21,9 @@
         <div class="now-playing-box">
             <div class="header">
                 <h1>Сейчас в кино</h1>
-                <nav class="nav">
-                    <a href="#" class="active">Все</a>
-                    <a href="#" class="gener" id="action">Боевики</a>
-                    <a href="#" class="gener" id="adventure">Приключения</a>
-                    <a href="#" class="gener" id="comedy">Комедии</a>
-                    <a href="#" class="gener" id="fantasy">Фантастика</a>
-                    <a href="#" class="gener" id="thriller">Триллеры</a>
-                    <a href="#" class="gener" id="drama">Драма</a>
-                </nav>
+                <div class="nav" id="genre-box">
+                    <div href="#" class="active">Все</div>
+                </div>
             </div>
             <div class="movies-box" id="movies"></div>
             <div class="btn-all-movies">
@@ -50,15 +44,15 @@
             </div>
 
             <div class="movie__box">
-                <iframe width="560" height="315" 
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/nrBlkIKy2bQ?si=hh-VNdaLOmfHE7Py"
                     title="YouTube video player" frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen class="movie"></iframe>
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen class="movie-trailer"></iframe>
             </div>
 
             <div class="movie__cont">
                 <div class="left__cont">
-                    <h2 class="movie__name"></h2>
+                    <h2 class="movie__name">Гадкий я 4</h2>
                     <img src="https://cdn4.iconfinder.com/data/icons/social-media-flat-7/64/Social-media_VK-512.png"
                         alt="vk" class="social_media_icon" />
                     <img src="https://cdn1.iconfinder.com/data/icons/social-media-outline-6/128/SocialMedia_Instagram-Outline-512.png"
@@ -69,11 +63,11 @@
 
                 <div class="right__cont">
                     <div class="like-box">
-                        <img src="./images/Лайк.png" alt="" />
+                        <img src="/Лайк.png" alt="" />
                         <span>33</span>
                     </div>
                     <div class="dislike-box">
-                        <img src="./images/Дисайк.png" alt="" />
+                        <img src="/Дисайк.png" alt="" />
                         <span>33</span>
                     </div>
                 </div>

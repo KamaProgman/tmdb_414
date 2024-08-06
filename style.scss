@@ -246,6 +246,10 @@ footer .confidance {
 
     position: relative;
     z-index: 10;
+
+    a {
+        color: #fff;
+    }
 }
 
 .nav div {
@@ -260,7 +264,7 @@ footer .confidance {
      color: #fff;
 }
 
-.movies-box, .popular-movies, .upcoming-movies {
+.movies-box, .popular-movies, .upcoming-movies, .actors-box {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
@@ -281,17 +285,17 @@ footer .confidance {
     height: auto;
 }
 
-.movie-info {
+.movie-inform {
     padding: 10px;
 }
 
-.movie-info p {
+.movie-inform p {
     color: #F2F60F;
     font-size: 14px;
     font-weight: lighter;
 }
 
-.movie-info h3 {
+.movie-inform h3 {
     font-size: 16px;
 }
 
@@ -531,3 +535,5 @@ color: #F2F60F;
 .red {
     background-color: #f44336;
 }
+
+

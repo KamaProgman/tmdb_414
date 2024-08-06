@@ -1,7 +1,8 @@
 import { ActorsRating } from "./components/actorsRating";
 import { footer } from "./components/footer";
+import { MovieGenres } from "./components/genres";
 import { header } from "./components/header";
-import { MovieGenres, NowPlaying} from "./components/movieCards";
+import { NowPlaying} from "./components/movieCards";
 import { PopularActors } from "./components/popularActors";
 import { addPostersToSwiper } from "./components/posters";
 import { searcher } from "./components/searcher";
@@ -53,8 +54,8 @@ console.log(movieGenres);
 
 console.log(movieGenresList);
 
-Promise.all([nowPlayingMovies, upcomingMovies, popularMovies, popularPeople, movieGenresList, movieGenres])
-.then(([nowPlayingMovies, upcomingMovies, popularMovies, popularPeople, movieGenresList, movieGenres]) => {
+Promise.all([nowPlayingMovies, upcomingMovies, popularMovies, popularPeople, movieGenresList])
+.then(([nowPlayingMovies, upcomingMovies, popularMovies, popularPeople, movieGenresList]) => {
   reload(nowPlayingMovies.data.results.slice(0,8), 'movies', NowPlaying)
 
   reload(upcomingMovies.data.results.slice(0,4), 'upcoming-movies', NowPlaying)
@@ -70,3 +71,4 @@ Promise.all([nowPlayingMovies, upcomingMovies, popularMovies, popularPeople, mov
   
 })
 .catch(error => console.error(error))
+

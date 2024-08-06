@@ -8,7 +8,7 @@ function NowPlaying(item) {
     const genre = document.createElement('p');
 
     movieContainer.className = 'movie';
-    movieInfo.className = 'movie-info';
+    movieInfo.className = 'movie-inform';
     rating.className = 'rating';
 
     img.src = "https://image.tmdb.org/t/p/original" + item.poster_path
@@ -25,18 +25,45 @@ function NowPlaying(item) {
         BgImg(item)
     }
    
-        movieContainer.onclick = (e) => {
-          if(e.target.classList.contains('movie')) {
-            window.location.replace('/pages/MovieCards/')
-            console.log(card);
-          }
-        }
+    movieContainer.onclick = () => {
+        let movieName = document.querySelector('.movie__name')
+        // movieName.forEach(elem => {
+        //     elem.textContent = item.title
+            
+        // });
+        movieName.textContent = item.title
+        localStorage.setItem('movieId', item.id);
+        localStorage.setItem('backdropPath', item.backdrop_path); 
+        location.replace('/pages/movie/');
+        BgImg(item);
+    };
       
 
     return movieContainer
 
 }
 
+function CreatePoster(item) {
+    // const postersBox = document.querySelector('.posters')
+    console.log(item);
+    const poster = document.createElement('div');
+    const img = document.createElement('img');
+    poster.className = 'poster';
+    img.src = "https://image.tmdb.org/t/p/original" + item.file_path;
+
+    poster.append(img);
+    // postersBox.append(poster)
+
+    return poster;
+}
+
+// function getMovieCard(movieId) {
+//     getData(`movie/${movieId}`)
+//     .then(res => {
+//         reload(res.data.results.slice(0,4), 'movies', NowPlaying)
+//     })
+//     .catch(error => console.error(error))
+// }
 function BgImg(item) {
     let body = document.querySelector('.bg-img');
     body.style.backgroundImage = `url("https://image.tmdb.org/t/p/original${item.backdrop_path}")`;
@@ -72,18 +99,33 @@ function SearchCards(item) {
     return card
 }
 
- function MovieGenres (item) {
-    const div = document.createElement('div')
-    div.className = 'search-tab'
-    div.setAttribute = ('id', 'search-tab')
-    div.textContent = item.name
-   
-        div.onclick = () => {
-              localStorage.setItem('genreId', item.id)
-              console.log(div);
-        }
-      
-    return div
+function MovieCard (item){
+    const movieBox = document.querySelector('.movie-card-box')
+
+    movieBox.innerHTML = `
+    <div class="movie-img-box">
+        <img src="https://image.tmdb.org/t/p/original${item.poster_path}" alt="">
+    </div>
+
+    <div class="elem-cont-box">
+        <h1 class="movie-name">${item.title}</h1>
+        <p>${item.original_title}</p>
+        <div class="description">${item.overview}</div>
+
+        <div class="icon-box">
+            <button> Смотреть трейлер</button>
+            <img src="https://cdn4.iconfinder.com/data/icons/social-media-flat-7/64/Social-media_VK-512.png"
+        alt="vk" class="social_media_icon social-media" />
+    <img src="https://cdn1.iconfinder.com/data/icons/social-media-outline-6/128/SocialMedia_Instagram-Outline-512.png"
+        alt="insta" class="social_media_icon social-media"/>
+    <img src="https://cdn1.iconfinder.com/data/icons/social-media-outline-6/128/SocialMedia_Facebook-Outline-1024.png"
+        alt="facebook" class="social_media_icon social-media" />
+        </div>
+    </div>
+
+    `
 }
 
-export { NowPlaying, SearchCards, MovieGenres}
+ 
+
+export { NowPlaying, SearchCards, MovieCard, CreatePoster}

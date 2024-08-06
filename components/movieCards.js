@@ -27,14 +27,10 @@ function NowPlaying(item) {
    
     movieContainer.onclick = () => {
         let movieName = document.querySelector('.movie__name')
-        // movieName.forEach(elem => {
-        //     elem.textContent = item.title
-            
-        // });
         movieName.textContent = item.title
         localStorage.setItem('movieId', item.id);
         localStorage.setItem('backdropPath', item.backdrop_path); 
-        location.replace('/pages/movie/');
+        location.href('/pages/movie/');
         BgImg(item);
     };
       

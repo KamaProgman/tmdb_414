@@ -30,7 +30,7 @@ function NowPlaying(item) {
         movieName.textContent = item.title
         localStorage.setItem('movieId', item.id);
         localStorage.setItem('backdropPath', item.backdrop_path); 
-        location.href('/pages/movie/');
+        location.replace('/pages/movie/');
         BgImg(item);
     };
       

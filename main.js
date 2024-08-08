@@ -47,9 +47,7 @@ let upcomingMovies = getData('movie/upcoming')
 let popularMovies =  getData('movie/popular')
 let popularPeople = getData('person/popular')
 const movieGenresList = getData('genre/movie/list')
-// let genresId = movieGenresList.data.genres.id
 let movieGenres = getData('discover/movie')
-// console.log(genresId);
 console.log(movieGenres);
 
 console.log(movieGenresList);

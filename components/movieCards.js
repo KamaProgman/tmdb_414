@@ -1,5 +1,8 @@
+import { getData } from "../libs/http";
+import { reload } from "../libs/utils";
+import { ActorsInMovie } from "./actorsInMovie";
+
 function NowPlaying(item) {
-    const moviesBox = document.querySelector('.movies-box');
     const movieContainer = document.createElement('div');
     const img = document.createElement('img');
     const movieInfo = document.createElement('div');
@@ -19,28 +22,25 @@ function NowPlaying(item) {
 
     movieInfo.append(rating, title, genre)
     movieContainer.append(img, movieInfo)
-    moviesBox.append(movieContainer)
 
-    movieContainer.onmouseenter = () =>{
+    movieContainer.onmouseenter = () => {
         BgImg(item)
     }
-   
+
     movieContainer.onclick = () => {
         let movieName = document.querySelector('.movie__name')
         movieName.textContent = item.title
         localStorage.setItem('movieId', item.id);
-        localStorage.setItem('backdropPath', item.backdrop_path); 
-        location.replace('/pages/movie/');
-        BgImg(item);
+        localStorage.setItem('backdropPath', item.backdrop_path);
+        location.href = '/pages/movie/';
     };
-      
+
 
     return movieContainer
 
 }
 
 function CreatePoster(item) {
-    // const postersBox = document.querySelector('.posters')
     console.log(item);
     const poster = document.createElement('div');
     const img = document.createElement('img');
@@ -48,7 +48,6 @@ function CreatePoster(item) {
     img.src = "https://image.tmdb.org/t/p/original" + item.file_path;
 
     poster.append(img);
-    // postersBox.append(poster)
 
     return poster;
 }
@@ -60,15 +59,14 @@ function CreatePoster(item) {
 //     })
 //     .catch(error => console.error(error))
 // }
-function BgImg(item) {
+function BgImg(movie) {
     let body = document.querySelector('.bg-img');
-    body.style.backgroundImage = `url("https://image.tmdb.org/t/p/original${item.backdrop_path}")`;
-    body.style.backgroundSize = "cover"; 
+    body.style.backgroundImage = `url("https://image.tmdb.org/t/p/original${movie.backdrop_path}")`;
+    body.style.backgroundSize = "cover";
     body.style.backgroundRepeat = "no-repeat";
 }
 
 function SearchCards(item) {
-    const moviesBox = document.querySelector('.movies-container')
     const card = document.createElement('div');
     const img = document.createElement('img');
     const details = document.createElement('div');
@@ -80,22 +78,35 @@ function SearchCards(item) {
     details.className = 'details';
     rating.className = 'rating-search green';
 
-    img.src =  item.poster_path ? `https://image.tmdb.org/t/p/original${item.poster_path}` : `https://image.tmdb.org/t/p/original${item.profile_path}`
+    img.src = item.poster_path ? `https://image.tmdb.org/t/p/original${item.poster_path}` : `https://image.tmdb.org/t/p/original${item.profile_path}`
     img.alt = item.title;
 
     title.textContent = item.title ? item.title : item.name
     subtitle.textContent = item.original_title ? item.original_title : item.original_name
     description.textContent = 'Боевик, триллер, драма, криминал, детектив, ...';
     // rating.textContent = item.vote_average.toFixed(1) ? item.vote_average.toFixed(1) : item.gender;
+    
 
     details.append(title, subtitle, description)
     card.append(img, details, rating)
-    moviesBox.append(card)
+
+    card.onclick = () => {
+        localStorage.setItem('movieId', item.id)
+        localStorage.setItem('actorId', item.id)
+        location.href = '/pages/actors/'
+        // if(localStorage.setItem('movieId', item.id)){
+        //     location.href = '/pages/movie/'
+
+        //     if(localStorage.setItem('actorId', item.id)){
+        //     location.href = '/pages/actors/'
+        // }
+        // } 
+    }
 
     return card
 }
 
-function MovieCard (item){
+function MovieCard(item) {
     const movieBox = document.querySelector('.movie-card-box')
 
     movieBox.innerHTML = `
@@ -122,6 +133,6 @@ function MovieCard (item){
     `
 }
 
- 
 
-export { NowPlaying, SearchCards, MovieCard, CreatePoster}
+
+export { NowPlaying, SearchCards, MovieCard, CreatePoster, BgImg }

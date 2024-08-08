@@ -1,7 +1,4 @@
 function PopularActors(item) {
-    const actorBox = document.querySelector('.celebs');
-
-
 const actor = document.createElement('div');
 const div = document.createElement('div')
 const actorRank = document.createElement('p');
@@ -27,7 +24,10 @@ actorAge.textContent = '57 лет';
 div.append(actorRank)
 div2.append(actorName, actorNameEn, actorAge)
 actor.append(div, div2)
-actorBox.append(actor)
+actor.onclick = () => {
+    localStorage.setItem('actorId', item.id)
+    location.href = '/pages/actors/'
+}
 
 return actor
 

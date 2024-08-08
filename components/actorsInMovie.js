@@ -1,5 +1,4 @@
 function ActorsInMovie(item) {
-    const moviesBox = document.querySelector('.actors-box');
     const movieContainer = document.createElement('div');
     const img = document.createElement('img');
     const movieInfo = document.createElement('div');
@@ -21,7 +20,6 @@ function ActorsInMovie(item) {
 
     movieInfo.append(actorName, actorNameEn, actorAge)
     movieContainer.append(img, movieInfo)
-    moviesBox.append(movieContainer)
 
 
     return movieContainer

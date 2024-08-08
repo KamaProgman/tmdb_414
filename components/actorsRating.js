@@ -1,6 +1,5 @@
 function ActorsRating(item){
-    const actorBox = document.querySelector('.actor-rating-box')
-
+    
     const actorInfo = document.createElement('div')
     const div = document.createElement('div')
     const actorName = document.createElement('p')
@@ -23,7 +22,10 @@ function ActorsRating(item){
     div.append(actorName, actorNameEn, actorAge)
     div2.append(actorRank)
     actorInfo.append(div, div2)
-    actorBox.append(actorInfo)
+    actorInfo.onclick = () => {
+        localStorage.setItem('actorId', item.id)
+        location.href = '/pages/actors/'
+    }
 
     return actorInfo
     }
